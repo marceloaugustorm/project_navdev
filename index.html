@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+        async function enviarFormulario(event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            try {
+                const resultado = await fetch('/login', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, senha }),
+                });
+
+                const response = await resultado.json();
+                if (resultado.ok) {
+                    Swal.fire({
+                        icon: 'success',
+                        text: response.message || 'Login realizado com sucesso!'
+                    }).then(() => {
+                        window.location.href = "/home.html"; 
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        text: response.message || 'Erro ao fazer o login'
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    text: 'Ocorreu um erro ao fazer a requisição.'
+                });
+            }
+        }
+    </script> 
+</head>
+<body>
+    <img src="Logo-NavDev.png" class="img_nav" alt="">
+    <h1 class="classe1">Lorem ipsum dolor sit</h1>
+    <h1 class="classe2"> amet, consectetur.</h1>
+
+    <p class="texto_w">Lorem ipsum dolor sit amet, consectetur <span style="color: rgb(118, 169, 228);">lorem</span></p>
+    <p class="texto_b">ipsum dolor sit amet, consectetur!</p>
+
+    <p class="texto_w">Lorem ipsum dolor sit amet, consectetur <span style="color: rgb(118, 169, 228);">lorem</span></p>
+    <p class="texto_b">ipsum dolor sit amet, consectetur!</p>
+
+    <p class="texto_w">Lorem ipsum dolor sit amet, consectetur <span style="color: rgb(118, 169, 228);">lorem</span></p>
+    <p class="texto_b">ipsum dolor sit amet, consectetur!</p>
+
+    <div class="input_fundo">
+        <div class="head">
+            <h3>Faça login ou crie sua conta</h3>
+            <br>
+            <h2>Sou uma empresa:</h2>
+            <form onsubmit="enviarFormulario(event);">
+                <input id="email" type="text" name="email" required>
+                <label for="email" class="label">Email:</label>
+
+                <input id="senha" type="password" name="senha" required>
+                <label for="senha" class="label">Senha:</label>
+
+                <img class="img" src="Logo-NavDev-botao.png" alt="">
+                <button type="submit" class="botao">Faça Login na NAVDEV</button>
+
+                <p>Primeira vez?</p>
+                <a href="/cadastro">Clica aqui!</a>
+                <h4>Ao fazer login, você aceita os Termos e a Política de Privacidade</h4>
+            </form>
+            <div class="gradient"></div>
+        </div>
+    </div>
+</body>
+</html>

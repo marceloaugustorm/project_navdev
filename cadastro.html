@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro do Anunciante/Empresa</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/cadastro.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+        async function validarFormulario(event) {
+            const senha = document.querySelector('input[name="senha"]').value;
+            const confirmSenha = document.querySelector('input[name="confirm_senha"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const confirmEmail = document.querySelector('input[name="confirm_email"]').value;
+
+            if (senha !== confirmSenha) {
+                await Swal.fire({
+                    icon: 'error',
+                    title: 'Erro!',
+                    text: 'As senhas não coincidem. Por favor, tente novamente.',
+                });
+                return false; 
+            }
+
+            if (email !== confirmEmail) {
+                await Swal.fire({
+                    icon: 'error',
+                    title: 'Erro!',
+                    text: 'Os emails não coincidem. Por favor, tente novamente.',
+                });
+                return false; 
+            }
+
+            return true; 
+        }
+
+        async function enviarFormulario(event) {
+            event.preventDefault();
+            if (await validarFormulario(event)) {
+                const formData = new FormData(event.target);
+                const data = Object.fromEntries(formData.entries());
+
+                const response = await fetch('/cadastro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                 
+                if(result.success){
+                    Swal.fire({
+                    icon: "success",
+                    text: result.message,
+                }).then(() =>{
+                    window.location.href = '/'
+                });
+
+            
+            }else{
+
+                Swal.fire({
+                icon: "error",
+                text: result.message,
+    
+            });
+        }
+    } 
+}      
+    </script>
+</head>
+<body>
+    <form onsubmit="enviarFormulario(event);">
+        <div class="pai">
+            <img class="imagem" src="Logo-NavDev.png" alt="">
+            <div class="h1"> 
+                <hr>
+                <h1>Cadastro do Anunciante/Empresa</h1>
+                <hr>
+            </div>
+            <div class="input_empresa">
+                <h2>Dados da Empresa / Anunciante</h2>
+                <div class="coluna">
+                    <label for="razao">Razão Social</label>
+                    <input type="text" name="razao" placeholder="Razão Social">
+                </div>
+                <div class="coluna">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" name="cnpj">
+                </div>    
+                <div class="coluna">
+                    <label for="pais">País</label>
+                    <input type="text" name="pais" placeholder="Brasil">
+                </div>
+                <div class="coluna">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="cidade" placeholder="Selecionar...">
+                </div>
+                <div class="coluna">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" name="endereco" placeholder="Rua, avenida, travessa">
+                </div>
+                <div class="coluna">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro">
+                </div>
+                <div class="coluna">
+                    <label for="telefone1">Telefone 1</label>
+                    <input type="text" name="telefone1">
+                </div>
+                <div class="coluna2">
+                    <label for="fantasia">Nome Fantasia</label>
+                    <input type="text" name="fantasia" placeholder="Nome Fantasia">
+                </div>
+                <div class="coluna2">
+                    <label for="data_fundacao">Data de Fundação</label>
+                    <input type="date" name="data_fundacao">
+                </div>
+                <div class="coluna2">
+                    <label for="estado">Estado</label>
+                    <input type="text" name="estado" placeholder="Selecionar...">
+                </div>
+                <div class="coluna2">
+                    <label for="agencia">Agência/Organização</label>
+                    <input type="text" name="agencia" placeholder="Selecionar...">
+                </div>
+                <div class="coluna2">
+                    <label for="numero">Número</label>
+                    <input type="text" name="numero" class="menor">
+                </div>
+                <div class="coluna2">
+                    <label for="cep">CEP</label>
+                    <input type="text" name="cep" class="menor">
+                </div>
+                <div class="coluna2">
+                    <label for="telefone2">Telefone 2</label>
+                    <input type="text" name="telefone2">
+                </div>
+            </div>
+
+            <div class="input_login">
+                <h2>Dados para Login</h2>
+                <label class="label_email1" for="email">Email:</label>
+                <input type="email" name="email" class="email1" required>
+                <label class="label_email2" for="confirm_email">Confirme o Email:</label>
+                <input type="email" name="confirm_email" class="email2" required>
+                <label class="label_senha" for="senha">Senha:</label>
+                <input class="senha" type="password" name="senha" required>
+                <label class="label_senha2" for="confirm_senha">Confirme a senha:</label>
+                <input class="senha2" type="password" name="confirm_senha" required> 
+            </div>
+
+            <button class="criar" type="submit">Criar conta</button>
+            <div class="gradient"></div>
+        </div>   
+    </form>    
+</body>
+</html>
+        

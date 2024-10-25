@@ -1,0 +1,205 @@
+@font-face {
+    font-family: 'fina';
+    src: url(CreatoDisplay-Light.otf);
+}
+
+@font-face {
+    font-family: 'forte';
+    src: url(LEMONMILK-Light.otf);
+}
+
+@font-face {
+    font-family: 'lorem';
+    src: url(Grotesk\ Bold.ttf);
+}
+
+
+body{
+    background-color: rgb(7, 16, 7);
+
+}
+
+
+label{
+    display: block;
+    margin-left: 10%;
+    bottom: -10px;
+    position: relative;
+    color: white;
+    font-family: 'fina';
+    font-size: 12px;
+    text-indent: -1px;
+}
+
+.input_fundo{
+    background-color: rgb(53, 57, 49);
+    display: block;
+    margin-left: 50%;
+    bottom: 300px;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: -60px;
+    position: relative;
+    width: 320px;
+    height: 28px;
+    background-color: rgb(24, 22, 22);
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: none;
+    border: none;
+    color: white;
+}
+
+.botao{
+    background-color: rgb(105, 146, 229);
+    width: 333px;
+    height: 50px;
+    border: solid black 3.5px;
+    border-radius: 8px;
+    bottom: -35px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin-left: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.head{
+    background-color: rgb(177, 179, 179);
+    height: 80px;
+    border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    border-bottom: solid rgb(97, 178, 249) 7px;
+}
+
+h3{
+    text-align: center;
+    position: relative;
+    bottom: -34px;
+    font-family: 'fina';
+    font-size: 15px;
+    font-weight: bold;
+}
+
+h2{
+    color: white;
+    position: relative;
+    bottom: -35px;
+    text-indent: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+}
+
+h4{
+    color: rgba(210, 197, 197, 0.51);
+    font-family: 'fina';
+    font-size: 13px;
+    position: relative;
+    bottom: -90px;
+    text-align: center;
+}
+
+.img{
+    width: 45px;
+    position: relative;
+    bottom: -83px;
+    z-index: 2;
+    margin-left: 35px;
+    border: solid black;
+    background-color: black;
+    border-radius: 8px;
+    height: 40px;
+    display: block;
+    transform: scale(1);
+}
+
+p{
+    color: white;
+    text-indent: 130px;
+    position: relative;
+    bottom: -90px;
+    font-family: 'fina';
+    font-size: 13px;
+    font-weight: bold;
+}
+
+a{
+    margin-left: 205px;
+    bottom: -59px;
+    position: relative;
+    color: white;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.gradient{
+        background: linear-gradient(to top,     rgb(82, 138, 194), rgba(68, 175, 141, 0));
+        display: flexbox;
+        bottom: -10px;
+        width: 1600px;
+        height: 420px;
+        margin-right: auto;
+        margin-left: -800px;
+        margin-top: 0px;
+        margin-bottom: 0x;
+}
+
+.img_nav{
+    position: relative;
+    width: 300px;
+    top: 230px;
+    margin-left: 250px;
+    z-index: 2;
+    margin-top: -50px;
+}
+
+.classe1{
+    color: rgb(118, 169, 228);
+    font-size: 30px;
+    position: relative;
+    top: 210px;
+    text-indent: 180px;
+    font-family: 'forte';  
+    word-spacing: 5 px;
+}
+
+.classe2{
+    color: rgb(118, 169, 228);
+    font-family: 'forte';
+    position: relative;
+    top: 210px;
+    text-indent: 180px;
+}
+
+.texto_w{
+    position: relative;
+    top: 220px;
+    text-indent: 180px;
+    font-size: 21px;
+    color: (118, 169, 228);
+}
+.texto_b{
+    position: relative;
+    top: 205px;
+    text-indent: 180px;
+    font-size: 20px;
+    color: rgb(118, 169, 228);;
+}
+
+.dropdown_menu h2{
+    display: block;
+}
+
+.dropdown_menu{
+    position: absolute;
+}

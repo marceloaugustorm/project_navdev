@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 're';
+    src: url(CreatoDisplay-Light.otf);
+}
+
+
+
+
+.head{
+    width: 2000px;
+    background-color: rgb(21, 21, 21);
+    height: 80px;
+    margin: -10px;
+    display: flex;
+}
+
+.imagem{
+    position: absolute;
+    width: 100px;
+    display: flex;
+    top: -75px;
+    left: 110px;
+}
+
+.h1{
+    position: relative;
+    top: 100px;
+    font-family: 're';
+    color: white;
+    font-size: 10px;
+    text-indent: 100px;
+}
+
+h2{
+    text-indent: 14px;
+    color: white;
+    font-size: 15px;
+    font-family: 're';
+}
+
+.input_empresa{
+    width: 1300px;
+    height: 500px;
+    background-color: rgb(42, 46, 42);
+    margin-left: 130px;
+    margin-right: auto;
+    position: relative;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+}
+
+.coluna{
+    flex-direction: column;
+    padding: 12px;
+    position: relative;
+    bottom: 10px;
+}
+
+.coluna2{
+    margin-left: 300px;
+    padding: 12px;
+    position: relative;
+    bottom: 469px;
+    display:inline-block
+
+}
+
+input{
+    display: flex;
+    align-items: flex;
+    background-color: rgb(28, 26, 26);
+    border: none;
+    border: solid rgba(255, 255, 255, 0.695) 0.3px;
+    border-radius: 5px;
+    width: 250px;
+    height: 20px;
+    font-family: 're';
+    font-size: 10px;
+    text-indent: 5px;
+}
+
+body{
+    background-color: black;
+    margin: 0;
+}
+
+#seta_pais{
+    position: relative;
+    top: 19px;
+    margin-left: 205px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    transform: scale(0.7);
+}
+
+#seta_cidade{
+    position: relative;
+    top: 19px;
+    margin-left: 192px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    transform: scale(0.7);
+}
+
+#seta_estado{
+    position: relative;
+    top: 19px;
+    margin-left: 195px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    transform: scale(0.7);
+}
+
+#seta_agencia{
+    position: relative;
+    top: 19px;
+    margin-left: 135px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    transform: scale(0.7);
+}
+
+label{
+    font-family: 're';
+    color: rgba(255, 255, 255, 0.701);
+    font-size: 10px;
+    position: relative;
+    bottom: 5px;
+}
+
+input::placeholder{
+    color: rgba(252, 252, 252, 0.682);
+    opacity: 1;
+}
+
+.menor{
+    width: 130px;
+}
+
+hr{
+    color: rgba(255, 255, 255, 0.066);
+    border: solid rgba(255, 255, 255, 0.086) 0.1px;
+    width: 1500px;
+}
+
+.input_login{
+    width: 1300px;
+    height: 230px;
+    background-color: rgb(42, 46, 42);
+    margin-left: 130px;
+    margin-right: auto;
+    position: relative;
+    top: 140px;
+    display: flex;
+    border-radius: 14px;
+    margin-top: 30px;
+}
+
+.email1{
+    position: relative;
+    top: 60px;
+    right: 140px;
+}
+
+.label_email1{
+    top: 43px;
+    right: 113px;
+}
+
+.email2{
+    position: relative;
+    top: 60px;
+    right: 184px;
+}
+
+.label_email2{
+    top: 43px;
+    right: 110px;
+}
+
+.senha{
+    position: relative;
+    top: 120px;
+    right: 750px;
+    width: 130px;
+}
+
+.label_senha{
+    top: 105px;
+    right: 720px;
+}
+
+.senha2{
+    position: relative;
+    top: 175px;
+    right: 960px;
+    width: 130px;
+}
+
+.label_senha2{
+    top: 155px;
+    right: 885px;
+
+}
+
+.criar{
+    position: relative;
+    top: 165px;
+    left: 140px;
+    border-radius: 13px;
+    font-family: 're';
+    background-color: rgb(132, 123, 168);
+    color: white;
+    font-size: 10px;
+    width: 70px;
+    height: 23px;
+    border: none;
+}
+
+
+.gradient{
+    background: linear-gradient(to top,     rgb(82, 138, 194), rgba(68, 175, 141, 0));
+    display: flexbox;
+    bottom: -10px;
+    width: 2400px;
+    height: 300px;
+    margin-right: auto;
+    margin-left: -800px;
+    margin-top: 60px;
+    z-index: 0;
+    position: absolute;
+}
+
+.pai{
+    position: relative;
+    top: 10px;
+    width: 500px;
+    height: 300px;
+    z-index: 1;
+    min-height: 200vh;
+}
